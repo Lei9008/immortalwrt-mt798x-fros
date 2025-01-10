@@ -20,14 +20,14 @@ detect_mtwifi() {
 					hwmode="11g"
 					htmode="HE40"
 					htbsscoex="1"
-					ssid="ImmortalWrt-2.4G"
+					ssid="HiWiFi"
 					dbdc_main="1"
 				else
 					band="5g"
 					hwmode="11a"
 					htmode="HE160"
 					htbsscoex="0"
-					ssid="ImmortalWrt-5G"
+					ssid="HiWiFi_5G"
 					dbdc_main="0"
 				fi
 				uci -q batch <<-EOF
@@ -50,7 +50,7 @@ detect_mtwifi() {
 					set wireless.default_${dev}.network=lan
 					set wireless.default_${dev}.mode=ap
 					set wireless.default_${dev}.ssid=${ssid}
-					set wireless.default_${dev}.encryption=he1235678
+					set wireless.default_${dev}.encryption=none
 EOF
 				uci -q commit wireless
 			}
