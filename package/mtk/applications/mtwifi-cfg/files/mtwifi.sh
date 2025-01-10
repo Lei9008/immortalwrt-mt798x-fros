@@ -20,14 +20,14 @@ detect_mtwifi() {
 					hwmode="11g"
 					htmode="HE40"
 					htbsscoex="1"
-					ssid="HiWiFi"
+					ssid="ImmortalWrt-2.4G"
 					dbdc_main="1"
 				else
 					band="5g"
 					hwmode="11a"
 					htmode="HE160"
 					htbsscoex="0"
-					ssid="HiWiFi_5G"
+					ssid="ImmortalWrt-5G"
 					dbdc_main="0"
 				fi
 				uci -q batch <<-EOF
