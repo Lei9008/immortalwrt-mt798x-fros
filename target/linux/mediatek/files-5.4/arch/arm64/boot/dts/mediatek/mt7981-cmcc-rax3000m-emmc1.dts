@@ -7,15 +7,8 @@
 #include "mt7981.dtsi"
 
 / {
-	model = "CMCC RAX3000M EMMC";
-	compatible = "cmcc,rax3000m-emmc", "mediatek,mt7981-emmc-rfb";
-
- aliases {
-		led-boot = &red_led;
-		led-failsafe = &red_led;
-		led-upgrade = &white_led;
-		led-running = &red_led;
-	};
+	model = "CMCC XR30 eMMC version (RAX3000Z Enhanced version)";
+	compatible = "cmcc,xr30-emmc", "mediatek,mt7981";
 
 	chosen {
 		bootargs = "console=ttyS0,115200n1 loglevel=8  \
@@ -35,7 +28,14 @@
 		regulator-boot-on;
 		regulator-always-on;
 	};
-	
+
+        aliases {
+		led-boot = &red_led;
+		led-failsafe = &red_led;
+		led-upgrade = &white_led;
+		led-running = &red_led;
+	};
+
 	gpio-keys {
 		compatible = "gpio-keys";
 		
