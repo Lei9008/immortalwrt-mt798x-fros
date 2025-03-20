@@ -4,7 +4,7 @@
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/input/input.h>
 
-#include "mt7981.dtsi"
+#include "mt7981-cmcc-rax3000m.dtsi"
 
 / {
 	model = "CMCC XR30 eMMC version (RAX3000Z Enhanced version)";
