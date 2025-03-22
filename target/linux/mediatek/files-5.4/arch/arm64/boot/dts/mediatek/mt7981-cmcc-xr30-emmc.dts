@@ -4,11 +4,18 @@
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/input/input.h>
 
-#include "mt7981-cmcc-xr30.dtsi"
+#include "mt7981.dtsi"
 
 / {
-	model = "CMCC XR30 eMMC version (RAX3000Z Enhanced version)";
-	compatible = "cmcc,xr30-emmc", "mediatek,mt7981";
+	model = "CMCC RAX3000M eMMC version";
+	compatible = "cmcc,rax3000m-emmc", "mediatek,mt7981";
+
+	aliases {
+		led-boot = &red_led;
+		led-failsafe = &red_led;
+		led-upgrade = &red_led;
+		led-running = &white_led;
+	};
 
 	chosen {
 		bootargs = "console=ttyS0,115200n1 loglevel=8  \
@@ -28,14 +35,7 @@
 		regulator-boot-on;
 		regulator-always-on;
 	};
-
-        aliases {
-		led-boot = &red_led;
-		led-failsafe = &red_led;
-		led-running = &white_led;
-		led-upgrade = &red_led;
-	};
-
+	
 	gpio-keys {
 		compatible = "gpio-keys";
 		
@@ -53,17 +53,22 @@
 		};
 	};
 
-  leds {
+	leds {
 		compatible = "gpio-leds";
 
 		red_led: red {
-			label = "rax3000z:red";
+			label = "rax3000m:red";
 			gpios = <&pio 35 GPIO_ACTIVE_LOW>;
 		};
 
+		red_led: red {
+			label = "rax3000m:red";
+			gpios = <&pio 12 GPIO_ACTIVE_LOW>;
+		};
+		
 		white_led: white {
-			label = "rax3000z:white";
-			gpios = <&pio 34 GPIO_ACTIVE_LOW>;
+			label = "rax3000m:white";
+			gpios = <&pio 9 GPIO_ACTIVE_LOW>;
 		};
 	};
 
@@ -83,23 +88,17 @@
 	status = "okay";
 };
 
-
-
 &mmc0 {
-	bus-width = <8>;
-	cap-mmc-highspeed;
-	max-frequency = <52000000>;
-	no-sd;
-	no-sdio;
-	non-removable;
-	pinctrl-names = "default", "state_uhs";
-	pinctrl-0 = <&mmc0_pins_default>;
-	pinctrl-1 = <&mmc0_pins_uhs>;
-	vmmc-supply = <&reg_3p3v>;
-	non-removable;
-	status = "okay";
+         pinctrl-names = "default", "state_uhs";
+         pinctrl-0 = <&mmc0_pins_default>;
+         pinctrl-1 = <&mmc0_pins_uhs>;
+         bus-width = <8>;
+         max-frequency = <52000000>;
+         cap-mmc-highspeed;
+         vmmc-supply = <&reg_3p3v>;
+         non-removable;
+         status = "okay";
 };
-
 
 &eth {
 	status = "okay";
