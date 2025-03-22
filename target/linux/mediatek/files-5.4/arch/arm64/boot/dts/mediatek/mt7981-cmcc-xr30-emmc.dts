@@ -61,15 +61,12 @@
 			gpios = <&pio 35 GPIO_ACTIVE_LOW>;
 		};
 
-		red_led: red {
-			label = "rax3000m:red";
+		white_led: white {
+			label = "rax3000m:white";
 			gpios = <&pio 12 GPIO_ACTIVE_LOW>;
 		};
 		
-		white_led: white {
-			label = "rax3000m:white";
-			gpios = <&pio 9 GPIO_ACTIVE_LOW>;
-		};
+		
 	};
 
 	gsw: gsw@0 {
