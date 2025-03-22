@@ -5,8 +5,8 @@
 	aliases {
 		led-boot = &red_led;
 		led-failsafe = &red_led;
-		led-running = &green_led;
-		led-upgrade = &blue_led;
+		led-running = &white_led;
+		led-upgrade = &red_led;
 	};
 
 	memory {
@@ -21,13 +21,13 @@
 			gpios = <&pio 35 GPIO_ACTIVE_LOW>;
 		};
 
-		green_led: green {
-			label = "rax3000m:green";
+		white_led: green {
+			label = "rax3000m:white";
 			gpios = <&pio 9 GPIO_ACTIVE_LOW>;
 		};
 
-		blue_led: blue {
-			label = "rax3000m:blue";
+		red_led: red {
+			label = "rax3000m:red";
 			gpios = <&pio 12 GPIO_ACTIVE_LOW>;
 		};
 	};
