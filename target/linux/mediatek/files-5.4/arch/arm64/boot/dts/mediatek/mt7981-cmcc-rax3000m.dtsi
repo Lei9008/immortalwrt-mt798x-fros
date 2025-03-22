@@ -26,10 +26,7 @@
 			gpios = <&pio 9 GPIO_ACTIVE_LOW>;
 		};
 
-		red_led: red {
-			label = "rax3000m:red";
-			gpios = <&pio 12 GPIO_ACTIVE_LOW>;
-		};
+		
 	};
 
 	gpio-keys {
