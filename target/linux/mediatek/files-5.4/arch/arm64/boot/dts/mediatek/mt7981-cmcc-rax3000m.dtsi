@@ -21,7 +21,7 @@
 			gpios = <&pio 35 GPIO_ACTIVE_LOW>;
 		};
 
-		white_led: green {
+		white_led: white {
 			label = "rax3000m:white";
 			gpios = <&pio 9 GPIO_ACTIVE_LOW>;
 		};
