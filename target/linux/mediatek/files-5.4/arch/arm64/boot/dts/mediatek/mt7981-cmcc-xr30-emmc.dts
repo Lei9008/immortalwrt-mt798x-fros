@@ -2,8 +2,8 @@
 #include "mt7981-cmcc-xr30.dtsi"
 
 / {
-	model = "CMCC RAX3000M";
-	compatible = "cmcc,rax3000m", "mediatek,mt7981";
+	model = "CMCC RAX3000M eMMC version";
+	compatible = "cmcc,rax3000m-emmc", "mediatek,mt7981";
 
 	chosen {
 		bootargs = "console=ttyS0,115200n1 loglevel=8 \
