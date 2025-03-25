@@ -1,9 +1,9 @@
 /dts-v1/;
-#include "mt7981-cmcc-rax3000m.dtsi"
+#include "mt7981-cmcc-xr30.dtsi"
 
 / {
-	model = "CMCC RAX3000M eMMC version";
-	compatible = "cmcc,rax3000m-emmc", "mediatek,mt7981";
+	model = "CMCC XR30 eMMC version (RAX3000Z Enhanced version)";
+	compatible = "cmcc,xr30-emmc", "mediatek,mt7981";
 
 	chosen {
 		bootargs = "console=ttyS0,115200n1 loglevel=8 \
@@ -14,7 +14,8 @@
 
 &mmc0 {
 	bus-width = <8>;
-	max-frequency = <26000000>;
+	cap-mmc-highspeed;
+	max-frequency = <52000000>;
 	no-sd;
 	no-sdio;
 	non-removable;
